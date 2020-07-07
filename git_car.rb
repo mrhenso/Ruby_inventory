@@ -8,5 +8,6 @@ puts "Color?"
 input = gets
 puts "Doors?"
 input4 = gets
-
-puts "\n\nUsed Car Inventory: \nWe have the following for sale \n #{input1} #{input2} #{input3} #{input4} for $10000"
+puts "Price?"
+input5 = gets
+puts "\n\nUsed Car Inventory: \nWe have the following for sale \n #{input1} #{input2} #{input3} #{input4} for $#{input5}"
