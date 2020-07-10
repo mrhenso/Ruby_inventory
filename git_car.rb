@@ -1,5 +1,5 @@
 def ask(input)
- puts "What the #{input} of your car?"
+ puts "What is the #{input} of your car?"
  gets
     end
 
@@ -9,6 +9,9 @@ model = ask("model")
 mileage = ask("mileage")
 color = ask("color")
 price = ask("price")
+drivetrain = ask("drivetrain")
+transmission = ask("transmission")
+
 
 puts ""
 
