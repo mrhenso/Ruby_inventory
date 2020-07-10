@@ -1,14 +1,14 @@
 def ask(input)
- puts "What the #{input.downcase} of your car?"
+ puts "What the #{input} of your car?"
  gets
     end
 
-year = ask("Year")
-make = ask("Make")
-model = ask("Model")
-mileage = ask("Mileage")
-color = ask("Color")
-price = ask("Price")
+year = ask("year")
+make = ask("make")
+model = ask("model")
+mileage = ask("mileage")
+color = ask("color")
+price = ask("price")
 
 puts ""
 
