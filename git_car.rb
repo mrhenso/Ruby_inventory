@@ -1,17 +1,39 @@
-def ask(input)
- puts "What is the #{input} of your car?"
- gets
+class NewCarForm
+    attr_reader :car
+
+    def initialize
+        @car = Car.new
+        @car.year = ask_question("year")
+        @car.make = ask_question("make").capitalize
+        @car.model = ask_question("model").capitalize
+        @car.mileage = ask_question("mileage")
+        @car.price = ask_question("price")
     end
 
-year = ask("year")
-make = ask("make")
-model = ask("model")
-mileage = ask("mileage")
-color = ask("color")
-price = ask("price")
-drivetrain = ask("drivetrain")
-transmission = ask("transmission")
+    def ask_question(input)
+        puts ""
+        puts "What is the car's #{input}?"
+        gets.chomp
+    end
 
-puts ""
+end
 
-puts "Vehicle is a #{year.chomp} #{make.capitalize.chomp} #{model.capitalize.chomp} that is #{color.chomp} in color with #{mileage.chomp} for $#{price.chomp}."
+class Car
+ attr_accessor :year, :make, :model, :mileage, :price
+    
+    
+    def to_s
+        puts ""
+        "#{@year} #{@make} #{@model} #{@mileage} miles for $#{@price}"
+    end
+end
+
+
+
+form = NewCarForm.new
+car = form.car
+puts car
+
+form2 = NewCarForm.new
+car2 = form2.car
+puts car2
