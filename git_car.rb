@@ -1,3 +1,13 @@
+class Car
+    attr_accessor :year, :make, :model, :mileage, :price
+       
+       
+       def to_s
+           puts ""
+           "#{@year} #{@make} #{@model} #{@mileage} miles for $#{@price}"
+       end
+   end
+
 class NewCarForm
     attr_reader :car
 
@@ -18,15 +28,7 @@ class NewCarForm
 
 end
 
-class Car
- attr_accessor :year, :make, :model, :mileage, :price
-    
-    
-    def to_s
-        puts ""
-        "#{@year} #{@make} #{@model} #{@mileage} miles for $#{@price}"
-    end
-end
+
 
 
 
