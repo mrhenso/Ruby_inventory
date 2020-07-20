@@ -1,4 +1,4 @@
-require_relative 'car_class'
+require_relative 'car'
 
 class NewCarForm
     attr_reader :car
