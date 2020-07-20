@@ -5,6 +5,5 @@ class Car
         puts ""
         "#{@year} #{@make} #{@model} #{@mileage} miles for $#{@price}"
     end
-
-    
+     
 end
