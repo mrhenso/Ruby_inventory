@@ -17,9 +17,6 @@ class NewCarForm
         puts "What is the car's #{input}?"
         gets.chomp
     end
-    def to_s
-        puts @car
-    end
+   
 end
 
-@car.to_s

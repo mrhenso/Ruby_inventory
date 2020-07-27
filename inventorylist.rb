@@ -2,7 +2,7 @@ require_relative 'car'
 require_relative 'newcarform'
 
 class InventoryList
-    attr_reader :car, :title, :carlist
+    attr_reader :car, :title, :carlist, :sell
         def initialize(title)
             @title = title
             car1 = Car.new
@@ -18,28 +18,26 @@ class InventoryList
             car2.mileage = 25
             car2.price = 98000
             @carlist = [car1, car2]
-            @usedcars = @title
-            show_inventory
         end
         
         def add_car(a_car)
             @carlist.push(a_car)
         end
         
-        def list_cars
-            @carlist.each do |c|
-        puts c
-            end 
-        end
 
         def sell
-        @carlist.pop
+            deletedcar = @carlist[@carlist.size - 1]
+            @carlist.pop
+            deletedcar
         end
        
         def show_inventory
             puts "#{@title} has #{@carlist.size} vehicles available:"
-            list_cars
+                @carlist.each do |c|
+                  puts c
+                end 
         end
+
 end 
 
 
