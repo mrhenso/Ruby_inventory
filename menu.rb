@@ -12,7 +12,7 @@ class Menu
 
     def initialize
         @title = "Welcome To Matt's Car Lot!!!"
-        @options = ["1. Add Car", "2. Sell Car", "3. Show Inventory", "4. Search", "5. Exit"]
+        @options = ["1. Show Inventory", "2. Add Vehicle", "3. Sell Vehicle", "4. Search", "5. Exit"]
         @inventorylist = InventoryList.new("Used Cars")
         intro
         prompt
@@ -62,22 +62,37 @@ class Menu
         end
     end    
 
+ 
     def select_option
         input = gets.chomp
         case input
         when "1"
-            form = NewCarForm.new
-            confirm_input(form.car)
-        when "2"
-            deletedcar = @inventorylist.sell
-            puts deletedcar
-        
-        when "3"
             puts ""
             @inventorylist.show_inventory
             prompt
+           
+        when "2"
+            form = NewCarForm.new
+            confirm_input(form.car)
+            
+        when "3"
+            deletedcar = @inventorylist.sell
+            puts deletedcar
+            prompt
+           
+        when "4"
+            puts ""
+            puts "What are you looking for?"
+            input = gets.chomp
+            @inventorylist.search_for
+        
         when "5"
-        exit
+            exit
+        else 
+            puts ""
+            puts "--Not a valid entry"
+            intro
+            prompt
         end
     
     # end
