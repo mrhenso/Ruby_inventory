@@ -95,10 +95,6 @@ class Menu
             prompt
         end
     
-    # end
-    # when 4
-    # input[4]
-    # end
 
     display_menu
         
