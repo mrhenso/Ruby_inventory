@@ -76,9 +76,11 @@ class Menu
             confirm_input(form.car)
             
         when "3"
-            deletedcar = @inventorylist.sell
-            puts deletedcar
+            puts ""
+            
+            @inventorylist.sell_listing 
             prompt
+            puts ""
            
         when "4"
             puts ""

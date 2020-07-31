@@ -28,9 +28,41 @@ class InventoryList
         
 
         def sell
-            deletedcar = @carlist[@carlist.size - 1]
-            @carlist.pop
-            puts "#{deletedcar} has been sold."
+            
+            puts "\nWhich car would you like to sell?"
+            
+            input = gets.chomp
+            
+            if input.to_i == 0
+                return
+            end
+
+            if input.to_i > @carlist.size
+                
+                puts "Not a valid entry. Please select an option listed or press 0 to exit."
+                sell_listing
+
+            else
+                puts "Sell #{@carlist[input.to_i - 1]}? [Yes or No]"
+                confirm = gets.chomp.downcase
+                
+                if confirm == "yes"
+                
+                    deletedcar = @carlist.delete_at(input.to_i - 1)    
+                
+                    puts "#{deletedcar} has been sold."
+                    puts ""
+                end
+            end
+        end
+
+        def sell_listing
+            puts "#{@title} has #{@carlist.size} vehicles available:"
+            @carlist.each_with_index do |c, i|
+                puts "#{i + 1} #{c}"
+            end 
+            
+            sell
         end
        
         def show_inventory
