@@ -82,12 +82,12 @@ end
 
 if __FILE__ == $0
 
-usedcars = InventoryList.new("Used Cars")
-# usedcars.list_cars
-# usedcars.sell
-# usedcars.list_cars
-puts ""
-usedcars.show_inventory
-# car1.body_style
-usedcars.search_for
+    usedcars = InventoryList.new("Used Cars")
+    # usedcars.list_cars
+    # usedcars.sell
+    # usedcars.list_cars
+    puts ""
+    usedcars.show_inventory
+    # car1.body_style
+    usedcars.search_for
 end
